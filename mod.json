@@ -1,0 +1,51 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"ios": "*"
+	},
+	"id": "minixx.clippy",
+	"name": "Minixx's Clippy",
+	"version": "v2.0.0",
+	"developer": "Minixx",
+	"description": "A NOVA-style control panel for Geometry Dash, opened from a small button in the pause menu. This version is the interface with placeholder content.",
+	"tags": [
+		"utility",
+		"interface"
+	],
+	"settings": {
+		"theme-mode": {
+			"type": "string",
+			"default": "Dark",
+			"one-of": [
+				"Dark",
+				"Light"
+			],
+			"name": "Theme",
+			"description": "Dark or light panel."
+		},
+		"theme-accent": {
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 6,
+			"name": "Accent colour",
+			"description": "0 yellow, 1 orange, 2 pink, 3 purple, 4 blue, 5 cyan, 6 green."
+		},
+		"theme-bg": {
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 6,
+			"name": "Background colour",
+			"description": "Tint of the panel (7 choices)."
+		},
+		"theme-glass": {
+			"type": "int",
+			"default": 88,
+			"min": 40,
+			"max": 100,
+			"name": "Panel opacity (%)",
+			"description": "Lower = more see-through."
+		}
+	}
+}
