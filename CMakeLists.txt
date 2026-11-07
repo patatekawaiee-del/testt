@@ -11,7 +11,6 @@ endif()
 
 project(MinixxsClippy VERSION 2.0.0)
 
-# Flat layout: every file at the repository root (easy to upload from an iPhone)
 file(GLOB SOURCES CONFIGURE_DEPENDS *.cpp)
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
@@ -20,6 +19,8 @@ if (NOT DEFINED ENV{GEODE_SDK})
 else()
     message(STATUS "Found Geode: $ENV{GEODE_SDK}")
 endif()
+
+set(SKIP_BUILDING_CODEGEN OFF CACHE BOOL "" FORCE)
 
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 
