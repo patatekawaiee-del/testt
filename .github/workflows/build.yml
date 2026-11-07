@@ -1,0 +1,22 @@
+name: Build Minixx's Clippy (iOS)
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "**"
+jobs:
+  build:
+    name: iOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the mod
+        uses: geode-sdk/build-geode-mod@main
+        id: build
+        with:
+          target: iOS
+      - name: Upload the .geode
+        uses: actions/upload-artifact@v4
+        with:
+          name: minixx.clippy
+          path: ${{ steps.build.outputs.build-output }}
